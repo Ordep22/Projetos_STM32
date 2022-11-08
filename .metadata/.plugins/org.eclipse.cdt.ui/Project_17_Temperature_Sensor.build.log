@@ -1,0 +1,191 @@
+12:34:23 **** Build of configuration Debug for project Project_17_Temperature_Sensor ****
+make -j4 all 
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_i2c_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart.o"
+arm-none-eabi-gcc "../Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.d" -MT"Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Drivers/STM32F0xx_HAL_Driver/Src/stm32f0xx_hal_uart_ex.o"
+arm-none-eabi-gcc "../Core/Src/OneWire.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/OneWire.d" -MT"Core/Src/OneWire.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/OneWire.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Src/OneWire.c:1:
+../Core/Inc/OneWire.h:103:56: error: unknown type name 'bool'
+  103 | Temperature readTemperature(OneWire *ow, RomCode *rom, bool reSense);
+      |                                                        ^~~~
+../Core/Src/OneWire.c: In function 'usart_enable_halfduplex':
+../Core/Src/OneWire.c:24:5: warning: implicit declaration of function 'USART_CR2' [-Wimplicit-function-declaration]
+   24 |     USART_CR2(usart) &= ~USART_CR2_LINEN;
+      |     ^~~~~~~~~
+../Core/Src/OneWire.c:24:26: error: 'USART_CR2_LINEN' undeclared (first use in this function)
+   24 |     USART_CR2(usart) &= ~USART_CR2_LINEN;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:24:26: note: each undeclared identifier is reported only once for each function it appears in
+../Core/Src/OneWire.c:25:26: error: 'USART_CR2_CLKEN' undeclared (first use in this function)
+   25 |     USART_CR2(usart) &= ~USART_CR2_CLKEN;
+      |                          ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:26:5: warning: implicit declaration of function 'USART_CR3' [-Wimplicit-function-declaration]
+   26 |     USART_CR3(usart) &= ~USART_CR3_SCEN;
+      |     ^~~~~~~~~
+../Core/Src/OneWire.c:26:26: error: 'USART_CR3_SCEN' undeclared (first use in this function)
+   26 |     USART_CR3(usart) &= ~USART_CR3_SCEN;
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/OneWire.c:27:26: error: 'USART_CR3_IREN' undeclared (first use in this function)
+   27 |     USART_CR3(usart) &= ~USART_CR3_IREN;
+      |                          ^~~~~~~~~~~~~~
+../Core/Src/OneWire.c:28:25: error: 'USART_CR3_HDSEL' undeclared (first use in this function)
+   28 |     USART_CR3(usart) |= USART_CR3_HDSEL;
+      |                         ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c: In function 'usart_setup':
+../Core/Src/OneWire.c:46:23: error: 'NVIC_USART1_IRQ' undeclared (first use in this function)
+   46 |     uint8_t irqs[] = {NVIC_USART1_IRQ, NVIC_USART2_IRQ, NVIC_USART3_IRQ, NVIC_UART4_IRQ, NVIC_UART5_IRQ};
+      |                       ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:46:40: error: 'NVIC_USART2_IRQ' undeclared (first use in this function)
+   46 |     uint8_t irqs[] = {NVIC_USART1_IRQ, NVIC_USART2_IRQ, NVIC_USART3_IRQ, NVIC_UART4_IRQ, NVIC_UART5_IRQ};
+      |                                        ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:46:57: error: 'NVIC_USART3_IRQ' undeclared (first use in this function)
+   46 |     uint8_t irqs[] = {NVIC_USART1_IRQ, NVIC_USART2_IRQ, NVIC_USART3_IRQ, NVIC_UART4_IRQ, NVIC_UART5_IRQ};
+      |                                                         ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:46:74: error: 'NVIC_UART4_IRQ' undeclared (first use in this function)
+   46 |     uint8_t irqs[] = {NVIC_USART1_IRQ, NVIC_USART2_IRQ, NVIC_USART3_IRQ, NVIC_UART4_IRQ, NVIC_UART5_IRQ};
+      |                                                                          ^~~~~~~~~~~~~~
+../Core/Src/OneWire.c:46:90: error: 'NVIC_UART5_IRQ' undeclared (first use in this function)
+   46 |     uint8_t irqs[] = {NVIC_USART1_IRQ, NVIC_USART2_IRQ, NVIC_USART3_IRQ, NVIC_UART4_IRQ, NVIC_UART5_IRQ};
+      |                                                                                          ^~~~~~~~~~~~~~
+../Core/Src/OneWire.c:49:5: warning: implicit declaration of function 'nvic_disable_irq' [-Wimplicit-function-declaration]
+   49 |     nvic_disable_irq(irqNumber);
+      |     ^~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:50:5: warning: implicit declaration of function 'usart_disable' [-Wimplicit-function-declaration]
+   50 |     usart_disable(usart);
+      |     ^~~~~~~~~~~~~
+../Core/Src/OneWire.c:53:5: warning: implicit declaration of function 'usart_set_baudrate' [-Wimplicit-function-declaration]
+   53 |     usart_set_baudrate(usart, baud);
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:54:5: warning: implicit declaration of function 'usart_set_databits' [-Wimplicit-function-declaration]
+   54 |     usart_set_databits(usart, bits);
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:55:5: warning: implicit declaration of function 'usart_set_stopbits' [-Wimplicit-function-declaration]
+   55 |     usart_set_stopbits(usart, stopbits);
+      |     ^~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:56:5: warning: implicit declaration of function 'usart_set_mode'; did you mean 'usart_setup'? [-Wimplicit-function-declaration]
+   56 |     usart_set_mode(usart, mode);
+      |     ^~~~~~~~~~~~~~
+      |     usart_setup
+../Core/Src/OneWire.c:57:5: warning: implicit declaration of function 'usart_set_parity'; did you mean 'usart_setup'? [-Wimplicit-function-declaration]
+   57 |     usart_set_parity(usart, parity);
+      |     ^~~~~~~~~~~~~~~~
+      |     usart_setup
+../Core/Src/OneWire.c:58:5: warning: implicit declaration of function 'usart_set_flow_control' [-Wimplicit-function-declaration]
+   58 |     usart_set_flow_control(usart, flowcontrol);
+      |     ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:60:5: warning: implicit declaration of function 'usart_enable_rx_interrupt' [-Wimplicit-function-declaration]
+   60 |     usart_enable_rx_interrupt(usart);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:63:5: warning: implicit declaration of function 'usart_enable' [-Wimplicit-function-declaration]
+   63 |     usart_enable(usart);
+      |     ^~~~~~~~~~~~
+../Core/Src/OneWire.c:64:5: warning: implicit declaration of function 'nvic_enable_irq' [-Wimplicit-function-declaration]
+   64 |     nvic_enable_irq(irqNumber);
+      |     ^~~~~~~~~~~~~~~
+../Core/Src/OneWire.c: In function 'owInit':
+../Core/Src/OneWire.c:70:22: warning: initialization of 'uint8_t *' {aka 'unsigned char *'} from incompatible pointer type 'RomCode *' [-Wincompatible-pointer-types]
+   70 |         uint8_t *r = &ow->ids[i];
+      |                      ^
+../Core/Src/OneWire.c: In function 'owReadHandler':
+../Core/Src/OneWire.c:85:11: warning: implicit declaration of function 'USART_CR1' [-Wimplicit-function-declaration]
+   85 |     if (((USART_CR1(usart) & USART_CR1_RXNEIE) != 0) &&
+      |           ^~~~~~~~~
+../Core/Src/OneWire.c:85:30: error: 'USART_CR1_RXNEIE' undeclared (first use in this function)
+   85 |     if (((USART_CR1(usart) & USART_CR1_RXNEIE) != 0) &&
+      |                              ^~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:86:11: warning: implicit declaration of function 'USART_SR' [-Wimplicit-function-declaration]
+   86 |         ((USART_SR(usart) & USART_SR_RXNE) != 0)) {
+      |           ^~~~~~~~
+../Core/Src/OneWire.c:86:29: error: 'USART_SR_RXNE' undeclared (first use in this function)
+   86 |         ((USART_SR(usart) & USART_SR_RXNE) != 0)) {
+      |                             ^~~~~~~~~~~~~
+../Core/Src/OneWire.c:89:28: warning: implicit declaration of function 'usart_recv_blocking' [-Wimplicit-function-declaration]
+   89 |         rc_buffer[index] = usart_recv_blocking(usart);
+      |                            ^~~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c: In function 'owResetCmd':
+../Core/Src/OneWire.c:101:37: error: 'USART_STOPBITS_1' undeclared (first use in this function)
+  101 |     usart_setup(ow->usart, 9600, 8, USART_STOPBITS_1, USART_MODE_TX_RX, USART_PARITY_NONE, USART_FLOWCONTROL_NONE);
+      |                                     ^~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:101:55: error: 'USART_MODE_TX_RX' undeclared (first use in this function)
+  101 |     usart_setup(ow->usart, 9600, 8, USART_STOPBITS_1, USART_MODE_TX_RX, USART_PARITY_NONE, USART_FLOWCONTROL_NONE);
+      |                                                       ^~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:101:73: error: 'USART_PARITY_NONE' undeclared (first use in this function)
+  101 |     usart_setup(ow->usart, 9600, 8, USART_STOPBITS_1, USART_MODE_TX_RX, USART_PARITY_NONE, USART_FLOWCONTROL_NONE);
+      |                                                                         ^~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c:101:92: error: 'USART_FLOWCONTROL_NONE' undeclared (first use in this function)
+  101 |     usart_setup(ow->usart, 9600, 8, USART_STOPBITS_1, USART_MODE_TX_RX, USART_PARITY_NONE, USART_FLOWCONTROL_NONE);
+      |                                                                                            ^~~~~~~~~~~~~~~~~~~~~~
+../Core/Src/OneWire.c: In function 'getUsartIndex':
+../Core/Src/OneWire.c:112:15: error: 'USART1' undeclared (first use in this function)
+  112 |         case (USART1):
+      |               ^~~~~~
+../Core/Src/OneWire.c:114:15: error: 'USART2' undeclared (first use in this function)
+  114 |         case (USART2):
+      |               ^~~~~~
+../Core/Src/OneWire.c:116:15: error: 'USART3' undeclared (first use in this function)
+  116 |         case (USART3):
+      |               ^~~~~~
+../Core/Src/OneWire.c:118:15: error: 'UART4' undeclared (first use in this function)
+  118 |         case (UART4):
+      |               ^~~~~
+../Core/Src/OneWire.c:120:15: error: 'UART5' undeclared (first use in this function)
+  120 |         case (UART5):
+      |               ^~~~~
+../Core/Src/OneWire.c: In function 'owSend':
+../Core/Src/OneWire.c:129:5: warning: implicit declaration of function 'usart_send'; did you mean 'usart_setup'? [-Wimplicit-function-declaration]
+  129 |     usart_send(ow->usart, data);
+      |     ^~~~~~~~~~
+      |     usart_setup
+../Core/Src/OneWire.c:130:13: warning: implicit declaration of function 'usart_get_flag' [-Wimplicit-function-declaration]
+  130 |     while (!usart_get_flag(ow->usart, USART_SR_TC));
+      |             ^~~~~~~~~~~~~~
+../Core/Src/OneWire.c:130:39: error: 'USART_SR_TC' undeclared (first use in this function)
+  130 |     while (!usart_get_flag(ow->usart, USART_SR_TC));
+      |                                       ^~~~~~~~~~~
+../Core/Src/OneWire.c: In function 'owCRC8':
+../Core/Src/OneWire.c:206:18: warning: passing argument 1 of 'owCRC' from incompatible pointer type [-Wincompatible-pointer-types]
+  206 |     return owCRC(rom, 7);
+      |                  ^~~
+      |                  |
+      |                  RomCode *
+../Core/Src/OneWire.c:187:24: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'RomCode *'
+  187 | uint8_t owCRC(uint8_t *mas, uint8_t Len) {
+      |               ~~~~~~~~~^~~
+../Core/Src/OneWire.c: In function 'owSearchCmd':
+../Core/Src/OneWire.c:268:34: warning: passing argument 2 of 'hasNextRom' from incompatible pointer type [-Wincompatible-pointer-types]
+  268 |         nextROM = hasNextRom(ow, &ow->ids[device]);
+      |                                  ^~~~~~~~~~~~~~~~
+      |                                  |
+      |                                  RomCode *
+../Core/Src/OneWire.c:216:38: note: expected 'uint8_t *' {aka 'unsigned char *'} but argument is of type 'RomCode *'
+  216 | int hasNextRom(OneWire *ow, uint8_t *ROM) {
+      |                             ~~~~~~~~~^~~
+../Core/Src/OneWire.c: At top level:
+../Core/Src/OneWire.c:349:56: error: unknown type name 'bool'
+  349 | Temperature readTemperature(OneWire *ow, RomCode *rom, bool reSense) {
+      |                                                        ^~~~
+../Core/Src/OneWire.c: In function 'getUsartIndex':
+../Core/Src/OneWire.c:125:1: warning: control reaches end of non-void function [-Wreturn-type]
+  125 | }
+      | ^
+make: *** [Core/Src/subdir.mk:37: Core/Src/OneWire.o] Error 1
+make: *** Waiting for unfinished jobs....
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+12:34:25 Build Failed. 26 errors, 22 warnings. (took 2s.629ms)
+

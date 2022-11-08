@@ -1,0 +1,54 @@
+12:40:06 **** Incremental Build of configuration Debug for project Project_15_RealTimeOperatingSystem ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0 -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:147:70: error: macro "osThreadDef" passed 5 arguments, but takes just 4
+  147 |   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+      |                                                                      ^
+In file included from ../Core/Src/main.c:21:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:431: note: macro "osThreadDef" defined here
+  431 | #define osThreadDef(name, priority, instances, stacksz) \
+      | 
+../Core/Src/main.c:147:3: error: 'osThreadDef' undeclared (first use in this function); did you mean 'osThreadDef_t'?
+  147 |   osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+      |   ^~~~~~~~~~~
+      |   osThreadDef_t
+../Core/Src/main.c:147:3: note: each undeclared identifier is reported only once for each function it appears in
+In file included from ../Core/Src/main.c:21:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:447:2: error: 'os_thread_def_defaultTask' undeclared (first use in this function)
+  447 | &os_thread_def_##name
+      |  ^~~~~~~~~~~~~~
+../Core/Src/main.c:148:38: note: in expansion of macro 'osThread'
+  148 |   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+      |                                      ^~~~~~~~
+../Core/Src/main.c:151:56: error: macro "osThreadDef" passed 5 arguments, but takes just 4
+  151 |   osThreadDef(Task2, Task2_Init, osPriorityIdle, 0, 128);
+      |                                                        ^
+In file included from ../Core/Src/main.c:21:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:431: note: macro "osThreadDef" defined here
+  431 | #define osThreadDef(name, priority, instances, stacksz) \
+      | 
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:447:2: error: 'os_thread_def_Task2' undeclared (first use in this function); did you mean 'os_thread_def'?
+  447 | &os_thread_def_##name
+      |  ^~~~~~~~~~~~~~
+../Core/Src/main.c:152:32: note: in expansion of macro 'osThread'
+  152 |   Task2Handle = osThreadCreate(osThread(Task2), NULL);
+      |                                ^~~~~~~~
+../Core/Src/main.c:157:56: error: macro "osThreadDef" passed 5 arguments, but takes just 4
+  157 |   osThreadDef(Task3, Task3_Init, osPriorityIdle, 0, 128);
+      |                                                        ^
+In file included from ../Core/Src/main.c:21:
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:431: note: macro "osThreadDef" defined here
+  431 | #define osThreadDef(name, priority, instances, stacksz) \
+      | 
+../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS_V2/cmsis_os.h:447:2: error: 'os_thread_def_Task3' undeclared (first use in this function); did you mean 'os_thread_def'?
+  447 | &os_thread_def_##name
+      |  ^~~~~~~~~~~~~~
+../Core/Src/main.c:158:32: note: in expansion of macro 'osThread'
+  158 |   Task3Handle = osThreadCreate(osThread(Task3),NULL);
+      |                                ^~~~~~~~
+make: *** [Core/Src/subdir.mk:40: Core/Src/main.o] Error 1
+"make -j4 all" terminated with exit code 2. Build might be incomplete.
+
+12:40:07 Build Failed. 8 errors, 0 warnings. (took 688ms)
+

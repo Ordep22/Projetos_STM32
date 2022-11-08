@@ -1,0 +1,62 @@
+Configuration	Project_08_Protocol_Serial_Comunication
+STM32CubeMX 	6.6.1
+Date	10/03/2022
+MCU	STM32F072RBTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+USART2	Asynchronous	USART2_RX	PA3
+USART2	Asynchronous	USART2_TX	PA2
+USART3	Asynchronous	USART3_RX	PC5
+USART3	Asynchronous	USART3_TX	PC4
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+16	PA2	USART2_TX	TX02
+17	PA3	USART2_RX	RX02
+21	PA5	GPIO_Output	LED02
+24	PC4	USART3_TX	TX03
+25	PC5	USART3_RX	RX03
+PERIPHERALS	MODES	FUNCTIONS	PINS
+USART2	Asynchronous	USART2_RX	PA3
+USART2	Asynchronous	USART2_TX	PA2
+USART3	Asynchronous	USART3_RX	PC5
+USART3	Asynchronous	USART3_TX	PC4
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+16	PA2	USART2_TX	TX02
+17	PA3	USART2_RX	RX02
+21	PA5	GPIO_Output	LED02
+24	PC4	USART3_TX	TX03
+25	PC5	USART3_RX	RX03
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : Project_08_Protocol_Serial_Comunication
+Project Folder : C:\Users\rubens.araujo\STM32CubeIDE\workspace_1.10.1\Project_08_Protocol_Serial_Comunication
+Toolchain / IDE : STM32CubeIDE
+Firmware Package Name and Version : STM32Cube FW_F0 V1.11.3
+
+
+Code Generation Settings : 
+STM32Cube MCU packages and embedded software packs : Copy only the necessary library files
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : No
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : No
+Set all free pins as analog (to optimize the power consumption) : No
+
+
+Toolchains Settings : 
+Compiler Optimizations : 
+
+
+
+
+

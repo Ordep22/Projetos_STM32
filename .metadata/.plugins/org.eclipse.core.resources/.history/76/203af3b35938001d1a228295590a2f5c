@@ -1,0 +1,24 @@
+///Projeto 00 - Pisca Led
+
+#include "stm32f0xx.h"
+#define IOPAEN (17U<<0)
+
+void main(){
+
+	RCC ->  AHBENR |= IOPAEN;
+
+	IOPAEN -> MODER |= (1U<<26);
+	IOPAEN -> MODER &~~ (1U<<27);
+
+
+
+
+
+
+
+
+
+
+
+}
+

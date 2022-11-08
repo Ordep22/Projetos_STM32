@@ -1,0 +1,10 @@
+16:32:52 **** Build of configuration Debug for project Project_12_Protocol_Serial_Decodificarion ****
+make -j4 all 
+arm-none-eabi-size   Project_12_Protocol_Serial_Decodificarion.elf 
+   text	   data	    bss	    dec	    hex	filename
+  13264	    120	   1888	  15272	   3ba8	Project_12_Protocol_Serial_Decodificarion.elf
+Finished building: default.size.stdout
+ 
+
+16:32:52 Build Finished. 0 errors, 0 warnings. (took 565ms)
+

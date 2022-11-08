@@ -1,0 +1,10 @@
+11:20:06 **** Incremental Build of configuration Debug for project Project_13_Protocol_Serial_Decodification ****
+make -j4 all 
+arm-none-eabi-size   Project_13_Protocol_Serial_Decodification.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15384	    120	   1760	  17264	   4370	Project_13_Protocol_Serial_Decodification.elf
+Finished building: default.size.stdout
+ 
+
+11:20:07 Build Finished. 0 errors, 0 warnings. (took 501ms)
+

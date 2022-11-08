@@ -1,0 +1,17 @@
+17:23:57 **** Incremental Build of configuration Debug for project Project_17.1_Temperature_Sensor_Function_Solution ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Project_17.1_Temperature_Sensor_Function_Solution.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\Project_17.1_Temperature_Sensor\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Project_17.1_Temperature_Sensor_Function_Solution.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Project_17.1_Temperature_Sensor_Function_Solution.elf
+ 
+arm-none-eabi-size   Project_17.1_Temperature_Sensor_Function_Solution.elf 
+arm-none-eabi-objdump -h -S  Project_17.1_Temperature_Sensor_Function_Solution.elf  > "Project_17.1_Temperature_Sensor_Function_Solution.list"
+   text	   data	    bss	    dec	    hex	filename
+  42404	    488	   1784	  44676	   ae84	Project_17.1_Temperature_Sensor_Function_Solution.elf
+Finished building: default.size.stdout
+ 
+Finished building: Project_17.1_Temperature_Sensor_Function_Solution.list
+ 
+
+17:23:59 Build Finished. 0 errors, 0 warnings. (took 1s.386ms)
+

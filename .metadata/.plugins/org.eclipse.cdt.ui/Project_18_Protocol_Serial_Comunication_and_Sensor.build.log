@@ -1,0 +1,17 @@
+16:21:32 **** Incremental Build of configuration Debug for project Project_18_Protocol_Serial_Comunication_and_Sensor ****
+make -j4 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F072xB -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -I../Middlewares/Third_Party/FreeRTOS/Source/include -I../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I../Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM0 -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "Project_18_Protocol_Serial_Comunication_and_Sensor.elf" @"objects.list"   -mcpu=cortex-m0 -T"C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\Project_18_Protocol_Serial_Comunication_and_Sensor\STM32F072RBTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Project_18_Protocol_Serial_Comunication_and_Sensor.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: Project_18_Protocol_Serial_Comunication_and_Sensor.elf
+ 
+arm-none-eabi-size   Project_18_Protocol_Serial_Comunication_and_Sensor.elf 
+arm-none-eabi-objdump -h -S  Project_18_Protocol_Serial_Comunication_and_Sensor.elf  > "Project_18_Protocol_Serial_Comunication_and_Sensor.list"
+   text	   data	    bss	    dec	    hex	filename
+  45048	    492	   5924	  51464	   c908	Project_18_Protocol_Serial_Comunication_and_Sensor.elf
+Finished building: default.size.stdout
+ 
+Finished building: Project_18_Protocol_Serial_Comunication_and_Sensor.list
+ 
+
+16:21:34 Build Finished. 0 errors, 0 warnings. (took 1s.361ms)
+

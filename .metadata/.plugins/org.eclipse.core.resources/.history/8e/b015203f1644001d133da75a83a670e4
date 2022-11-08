@@ -1,0 +1,536 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * Copyright (c) 2022 STMicroelectronics.
+  * All rights reserved.
+  *
+  * This software is licensed under terms that can be found in the LICENSE file
+  * in the root directory of this software component.
+  * If no LICENSE file comes with this software, it is provided AS-IS.
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
+
+
+
+
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+UART_HandleTypeDef huart2;
+UART_HandleTypeDef huart3;
+
+
+#define comand_high  HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_SET)
+#define comand_low HAL_GPIO_WritePin(GPIOA,GPIO_PIN_5,GPIO_PIN_RESET)
+#define delay_00 HAL_Delay(750)
+#define delay_01 HAL_Delay(450)
+#define ESTAGIO_PREPROSSEAMENTO 0
+#define ESTAGIO_01 1
+#define ESTAGIO_02 2
+#define ESTAGIO_03 3
+#define ESTAGIO_04 4
+#define ESTAGIO_05 5
+#define CABECALHO 6
+#define TAMANHO 7
+#define COMANDO 8
+#define MENSAGEM 9
+#define CHECKSUM 10
+
+
+uint8_t ErroCabecalho[] = "Elemento de cabecalho incorreto\n";
+uint8_t MensageVazia[] = "-";
+
+
+
+
+int  PiscaLed (int NumPiscadas, int TempoDelay)
+{
+	//pesquisar sobre funções, e qual é a diferença da uma fuunção void para uma int, char....
+
+
+
+	for (int i = 0; i < NumPiscadas + 1; i++)
+	{
+
+		HAL_GPIO_WritePin(GPIOA,LED02_Pin,GPIO_PIN_SET);
+		HAL_Delay(TempoDelay);
+		HAL_GPIO_WritePin(GPIOA,LED02_Pin,GPIO_PIN_RESET);
+		HAL_Delay(TempoDelay);
+
+	}
+
+	return 0;
+
+
+}
+
+
+
+//Função que realiza a verificação dos blocos de comunicação
+
+
+volatile char V_Estagio; //Variável de cintrole do switch case
+volatile char V_Estagio_Protocolo;
+//void Protocolo(uint8_t *a)
+void Protocolo(uint8_t *a)
+{
+//Quan a função é declarada e logo abaixo é chamda não é necessário montar um projeto
+
+	  fflush(stdin);
+	  int CheckSum = 0;
+	  uint8_t Check_Sum[2] = {0};
+
+	  /*uint8_t rec_bit[] = "\r\n\n !\r\n\n";
+	  uint8_t msg_00[] = "Estagio de espera concluido!!\r\n";
+	  uint8_t msg_01[] = "Estagio 1 concluido!!\r\n";
+	  uint8_t msg_02[] = "Estagio 2 concluido!!\r\n";
+	  uint8_t msg_03[] = "Estagio 3 concluido!!\r\n";
+	  uint8_t msg_04[] = "Estagio 4 concluido!!\r\n";
+	  uint8_t Pula_linha[] = "\n";
+	  */
+
+
+
+	  switch(V_Estagio_Protocolo)
+	  {
+
+
+	  	//Nesta estapa são verificados os elementos do cabecalho
+	    case(CABECALHO):
+	    {
+
+		  switch(V_Estagio)
+		  {
+
+			  case ESTAGIO_PREPROSSEAMENTO:
+			  {
+
+				  if((a[0] == 'L')){
+
+					 V_Estagio  = ESTAGIO_01;
+					 HAL_UART_Transmit(&huart2,&a[0],1,100);
+					 CheckSum +=1;
+
+
+
+
+				  }
+
+				  if ((a[0] != 'L' ) && (a[0] != '\0') )
+				  {
+
+					  HAL_UART_Transmit(&huart2,&a[0],1,100);
+					  HAL_UART_Transmit(&huart2,ErroCabecalho,sizeof(ErroCabecalho)-1,100);
+					  break;
+
+				  }
+
+			  }
+
+			  case ESTAGIO_01:
+			  {
+
+				  if((a[1] == 'U'))
+				  {
+
+					  V_Estagio  = ESTAGIO_02;
+					  HAL_UART_Transmit(&huart2,&a[1],1,100);
+					  CheckSum +=1;
+
+				  }
+
+				  if ((a[1] != 'U') && (a[1] != '\0'))
+				  {
+					  HAL_UART_Transmit(&huart2,&a[1],1,100);
+					  HAL_UART_Transmit(&huart2,ErroCabecalho,sizeof(ErroCabecalho)-1,100);
+					  break;
+				  }
+			  }
+			  case ESTAGIO_02:
+			  {
+				  if((a[2] == 'P'))
+				  {
+
+					  V_Estagio  = ESTAGIO_03;
+					  HAL_UART_Transmit(&huart2,&a[2],1,100);
+					  CheckSum +=1;
+				  }
+
+				  if ((a[2] != 'P') && (a[2] != '\0'))
+
+				  {
+					  HAL_UART_Transmit(&huart2,&a[2],1,100);
+					  HAL_UART_Transmit(&huart2,ErroCabecalho,sizeof(ErroCabecalho)-1,100);
+					  break;
+				  }
+
+
+
+			  }
+			  case ESTAGIO_03:
+
+			  {
+				  if((a[3] == 'A'))
+
+				  {
+					  V_Estagio  = ESTAGIO_PREPROSSEAMENTO;
+					  V_Estagio_Protocolo = TAMANHO;
+					  HAL_UART_Transmit(&huart2,&a[3],1,100);
+					  CheckSum +=1;
+
+				  }
+
+				  if ((a[3] != 'A') && (a[3] != '\0'))
+
+				  {
+					  HAL_UART_Transmit(&huart2,&a[3],1,100);
+					  HAL_UART_Transmit(&huart2,ErroCabecalho,sizeof(ErroCabecalho)-1,100);
+					  break;
+
+				  }
+
+			  }
+
+		  	}
+
+	      }
+
+		  case(TAMANHO):
+		  {
+
+			  if (a[4] == '1' && a[5] == '2' )
+			  {
+
+				  V_Estagio_Protocolo = COMANDO;
+				  HAL_UART_Transmit(&huart2,&a[4],1,100);
+				  CheckSum +=1;
+
+			  }
+
+			  else
+			  {
+
+				  HAL_UART_Transmit(&huart2,&a[4],1,100);
+				  HAL_UART_Transmit(&huart2,&a[5],1,100);
+				  HAL_UART_Transmit(&huart2,ErroCabecalho,sizeof(ErroCabecalho)-1,100);
+				  break;
+
+			  }
+
+		  }
+
+		  case(COMANDO):
+		  {
+
+			  if (a[6] == 'H')
+			  {
+
+				  V_Estagio_Protocolo = MENSAGEM;
+				  HAL_UART_Transmit(&huart2,&a[6],1,100);
+				  PiscaLed (4, 500);
+				  CheckSum +=1;
+
+			  }
+
+			  if ((a[6] != 'H') && (a[6] != '\0'))
+			  {
+
+				  HAL_UART_Transmit(&huart2,&a[6],1,100);
+				  HAL_UART_Transmit(&huart2,ErroCabecalho,sizeof(ErroCabecalho)-1,100);
+				  break;
+
+			  }
+
+			}
+
+		  case(MENSAGEM): //Se o tamanho da mensagem é variável cmo vou passar um tamanho
+		  {
+
+
+			  V_Estagio_Protocolo = CHECKSUM;
+
+			  for(int i = 7; i < 12; i++)
+			  {
+
+				  if (a[i] != 0)
+				  {
+
+					  HAL_UART_Transmit(&huart2,&a[i],1,100);
+					  CheckSum +=1;
+
+				  }
+
+
+				  else
+				  {
+
+					  HAL_UART_Transmit(&huart2,MensageVazia,1,100);
+
+				  }
+
+			  }
+
+		  }
+
+
+		 case(CHECKSUM):
+		 {
+
+			 CheckSum +=1;
+			 Check_Sum[0] = CheckSum;
+			 HAL_UART_Transmit(&huart2,&Check_Sum[1],1,100);
+			 HAL_UART_Transmit(&huart2,&Check_Sum[2],1,100);
+
+		 }
+
+	}
+
+}
+
+void SystemClock_Config(void);
+static void MX_GPIO_Init(void);
+static void MX_USART2_UART_Init(void);
+static void MX_USART3_UART_Init(void);
+
+int main(void)
+{
+
+  HAL_Init();
+
+  SystemClock_Config();
+  MX_GPIO_Init();
+  MX_USART2_UART_Init();
+  MX_USART3_UART_Init();
+
+ V_Estagio  = ESTAGIO_PREPROSSEAMENTO;
+ V_Estagio_Protocolo = CABECALHO;
+
+ uint8_t rx_buffer[14] = {0};
+ HAL_StatusTypeDef status;
+
+
+  while (1)
+  {
+
+
+	 status  =  HAL_UART_Receive_IT(&huart2,rx_buffer,9);
+	 HAL_Delay(1000);
+
+
+	 if (status == HAL_OK)
+
+	 {
+
+		 Protocolo(rx_buffer);
+
+
+	 }
+
+
+  }
+
+
+}
+
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+
+  /** Initializes the RCC Oscillators according to the specified parameters
+  * in the RCC_OscInitTypeDef structure.
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** Initializes the CPU, AHB and APB buses clocks
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  PeriphClkInit.PeriphClockSelection = RCC_PERIPHCLK_USART2;
+  PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+  if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/**
+  * @brief USART2 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART2_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART2_Init 0 */
+
+  /* USER CODE END USART2_Init 0 */
+
+  /* USER CODE BEGIN USART2_Init 1 */
+
+  /* USER CODE END USART2_Init 1 */
+  huart2.Instance = USART2;
+  huart2.Init.BaudRate = 9600;
+  huart2.Init.WordLength = UART_WORDLENGTH_8B;
+  huart2.Init.StopBits = UART_STOPBITS_1;
+  huart2.Init.Parity = UART_PARITY_NONE;
+  huart2.Init.Mode = UART_MODE_TX_RX;
+  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart2) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART2_Init 2 */
+
+  /* USER CODE END USART2_Init 2 */
+
+}
+
+/**
+  * @brief USART3 Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_USART3_UART_Init(void)
+{
+
+  /* USER CODE BEGIN USART3_Init 0 */
+
+  /* USER CODE END USART3_Init 0 */
+
+  /* USER CODE BEGIN USART3_Init 1 */
+
+  /* USER CODE END USART3_Init 1 */
+  huart3.Instance = USART3;
+  huart3.Init.BaudRate = 9600;
+  huart3.Init.WordLength = UART_WORDLENGTH_8B;
+  huart3.Init.StopBits = UART_STOPBITS_1;
+  huart3.Init.Parity = UART_PARITY_NONE;
+  huart3.Init.Mode = UART_MODE_TX_RX;
+  huart3.Init.HwFlowCtl = UART_HWCONTROL_NONE;
+  huart3.Init.OverSampling = UART_OVERSAMPLING_16;
+  huart3.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
+  huart3.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
+  if (HAL_UART_Init(&huart3) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN USART3_Init 2 */
+
+  /* USER CODE END USART3_Init 2 */
+
+}
+
+/**
+  * @brief GPIO Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_GPIO_Init(void)
+{
+  GPIO_InitTypeDef GPIO_InitStruct = {0};
+
+  /* GPIO Ports Clock Enable */
+  __HAL_RCC_GPIOA_CLK_ENABLE();
+  __HAL_RCC_GPIOC_CLK_ENABLE();
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(LED02_GPIO_Port, LED02_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin : LED02_Pin */
+  GPIO_InitStruct.Pin = LED02_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(LED02_GPIO_Port, &GPIO_InitStruct);
+
+}
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+  __disable_irq();
+  while (1)
+  {
+  }
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     ex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */

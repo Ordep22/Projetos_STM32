@@ -1,0 +1,10 @@
+17:34:56 **** Incremental Build of configuration Debug for project Project_19_AD_Convesion ****
+make -j4 all 
+arm-none-eabi-size   Project_19_AD_Convesion.elf 
+   text	   data	    bss	    dec	    hex	filename
+  42884	    488	   1856	  45228	   b0ac	Project_19_AD_Convesion.elf
+Finished building: default.size.stdout
+ 
+
+17:34:57 Build Finished. 0 errors, 0 warnings. (took 440ms)
+

@@ -1,0 +1,10 @@
+16:32:49 **** Build of configuration Debug for project Project_08_Protocol_Serial_Comunication_Check_Sum ****
+make -j4 all 
+arm-none-eabi-size   Project_08_Protocol_Serial_Comunication_Check_Sum.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15084	    192	   1856	  17132	   42ec	Project_08_Protocol_Serial_Comunication_Check_Sum.elf
+Finished building: default.size.stdout
+ 
+
+16:32:50 Build Finished. 0 errors, 0 warnings. (took 501ms)
+

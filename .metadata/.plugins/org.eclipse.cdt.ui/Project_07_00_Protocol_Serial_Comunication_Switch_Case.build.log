@@ -1,0 +1,10 @@
+18:23:40 **** Incremental Build of configuration Debug for project Project_07_00_Protocol_Serial_Comunication_Switch_Case ****
+make -j4 all 
+arm-none-eabi-size   Project_07_00_Protocol_Serial_Comunication_Switch_Case.elf 
+   text	   data	    bss	    dec	    hex	filename
+  15240	    120	   1856	  17216	   4340	Project_07_00_Protocol_Serial_Comunication_Switch_Case.elf
+Finished building: default.size.stdout
+ 
+
+18:23:44 Build Finished. 0 errors, 0 warnings. (took 3s.913ms)
+
