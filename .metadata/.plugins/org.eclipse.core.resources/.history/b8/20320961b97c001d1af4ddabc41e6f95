@@ -1,0 +1,349 @@
+/*
+ * Comunicacao.c
+ *
+ *  Created on: Oct 28, 2022
+ *      Author: italo.francis
+ */
+
+
+#include "Comunicacao.h"
+#include "flash.h"
+#include "decodHEx.h"
+#include "Bootloader.h"
+#include "usart.h"
+#include "main.h"
+
+
+
+
+uint8_t estadoSerial = ESTADO_AGUARDANDO_PACOTE;
+CONTROLE_TRANSFERENCIA_DADOS coleta;
+UART_HandleTypeDef *huart = &huart2;
+PROTOCOLO RxUART, TxUART;
+TStatus status;
+
+
+uint16_t idxBuffer = 0;
+uint16_t numBytes;
+uint8_t *estado = &estadoSerial;
+PROTOCOLO *dadosRx;
+static uint8_t blocoHexProcessado[100];
+
+
+
+static STATS_FIRMWARE stats_firm;
+
+void ReceberSerial(uint8_t byte) {
+
+	timeoutUART = TIMEOUT_COMUNICACAO_RX; //Reinicia o contador de timeout
+	ProcessarMaquinaEstados(byte);
+}
+
+
+
+void ProcessarMaquinaEstados(uint8_t byte)
+{
+	dadosRx = &RxUART;
+
+	switch (*estado)
+	{
+
+	case ESTADO_AGUARDANDO_PACOTE:
+		if (byte == 'L')
+		{
+			memset(dadosRx->buffer, 0, sizeof(dadosRx->buffer)); // Zera o buffer de recepção
+			idxBuffer = 0;
+			dadosRx->buffer[idxBuffer++] = byte; // Adiciona o byte na union
+			*estado = ESTADO_RECEBENDO_HEADER;
+			//HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_SET);
+		}
+
+		break;
+
+	case ESTADO_RECEBENDO_HEADER:
+		// Receber dados até completar a quantidade de bytes referente a
+		// 	[ 4 bytes de StartCode ] + [ 2 bytes de Tamanho ]
+		dadosRx->buffer[idxBuffer++] = byte;
+		// Se recebeu tamanho -> Verifica sequencia
+		numBytes = idxBuffer;                    //número de dados já recebidos
+		if (numBytes == 6)
+		{
+			// Verificar sequência de dados do cabeçalho
+			// Se sequencia inicial Ok -> receber tamanho
+			if (strncmp((char*) dadosRx->pacote.start, "LUPA", 4) == 0)
+			{
+				//Start OK
+				*estado = ESTADO_RECEBENDO_DADOS;
+			}
+		}
+		break;
+
+	case ESTADO_RECEBENDO_DADOS:
+		// Receber dados até completar a quantidade de bytes referente ao
+		// tamanho informado no cabeçalho + [ 1 byte de comando ] + [ 2 bytes de checksum ]
+		dadosRx->buffer[(idxBuffer)++] = byte;
+
+		//	Se recebeu tamanho completo -> ESTADO_PROCESSANDO_PACOTE
+		numBytes = idxBuffer;                    //número de dados já recebidos
+		if (numBytes >= dadosRx->pacote.tamanho + TAMANHO_CHECKSUM)
+		{
+			*estado = ESTADO_PROCESSANDO_PACOTE;
+		}
+		break;
+
+	case ESTADO_PROCESSANDO_PACOTE:
+		// Recebeu dado enquanto está em processamento
+		// Responde comando BUSY
+	{
+		uint8_t sendbuffer[9] =
+		{ 0 };
+		uint16_t n = MontarPacote(sendbuffer, CMD_BUSY, 0);
+		HAL_UART_Transmit(huart, sendbuffer, n, TIMEOUT_COMUNICACAO_TX);
+	}
+
+		break;
+
+	default:
+		break;
+	}
+
+}
+
+
+
+
+/*
+ * [L,U,P,A,XX,XX,CMD,{dados},YY,YY]
+ */
+
+
+void ProcessarUART() {
+
+
+	uint8_t *estado = &estadoSerial;
+	CONTROLE_TRANSFERENCIA_DADOS *controleDados = &coleta;
+	PROTOCOLO *dadosTx = &TxUART;
+	PROTOCOLO *dadosRx = &RxUART;
+
+
+	//------- Verificando timeout
+
+	if (timeoutUART == 0) { //&& *estado != ESTADO_AGUARDANDO_PACOTE) {
+
+		// Timeout no processamento do pacote, retorna ao estado inicial
+
+		*estado = ESTADO_AGUARDANDO_PACOTE;
+
+		HAL_UART_Abort(huart);
+
+		//HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+
+		return;
+	}
+
+	if (*estado == ESTADO_PROCESSANDO_PACOTE)
+	{
+
+		if (controleDados->estado != ESTADO_ENVIANDO_PACOTE_DADOS)
+		{
+			// Limpa buffer de envio
+			memset(dadosTx->buffer, 0, sizeof(dadosTx->buffer));
+			// Nota: Buffer so sera limpo se (controleDados->estado != ESTADO_ENVIANDO_PACOTE_DADOS)
+			//		 Pois, se (controleDados->estado == ESTADO_ENVIANDO_PACOTE_DADOS),
+			//		 em caso de haver retorno de erro deve reenviar o mesmo pacote
+		}
+
+		uint16_t n = 0;
+		//-------------------------------------------------------------------
+		// Validacao do conteudo do pacote
+		int statusPacote = ValidarPacote(dadosRx->buffer);
+
+		//SCB_CleanDCache();
+
+
+		if (statusPacote != E_PACOTE_OK)
+		{
+			//Dados invalidos no pacote
+			uint8_t comandoRetorno;
+			if (statusPacote == E_CHECKSUM)
+			{
+				comandoRetorno = CMD_ERRO_CHK;
+			}
+			else if (statusPacote == E_COMANDO_INVALIDO)
+			{
+				comandoRetorno = CMD_INVALIDO;
+			}
+			n = MontarPacote(dadosTx->buffer, comandoRetorno, 0);
+
+			HAL_UART_Transmit(huart, dadosTx->buffer, n, 1000);
+
+			*estado = ESTADO_AGUARDANDO_PACOTE;
+
+			//HAL_GPIO_WritePin(LD2_GPIO_Port, LD2_Pin, GPIO_PIN_RESET);
+
+			return;
+		}
+
+		uint8_t comando = dadosRx->pacote.comando;
+
+		switch (comando)
+		{
+
+		case CMD_STATUS:
+
+			status.parametros.statusEquipamento = 0xFF; //Valor de status que indica Bootloader
+			status.parametros.statusEquipamento = 0xFF; //Valor de status que indica Bootloader
+			status.parametros.versaoFirmware.Major = _V_MAIOR;
+			status.parametros.versaoFirmware.Minor = _V_MENOR;
+			status.parametros.versaoFirmware.Build = _V_BUILD;
+
+
+			//Bootloader_LerAssinatura((char*) status.parametros.assinatura, 0);
+
+			memcpy(dadosTx->pacote.dados, status.dados, sizeof(status.dados));
+
+			//dadosTx->pacote.dados[0] = 0xB;
+			n = MontarPacote(dadosTx->buffer, comando, sizeof(status.dados));
+
+			HAL_UART_Transmit(huart, n, sizeof n, 1000);
+
+
+			break;
+
+		case CMD_PING:
+
+			n = MontarPacote(dadosTx->buffer, comando, 0);
+
+
+
+			break;
+
+
+		case CMD_ABRIR_BOOTLOADER: // ABRE O ARQUIVO PARA FAZER GRAVAR HEX DO FIRMWARE (MAIN) e (BOOTLOADER)
+
+		     memset(blocoHexProcessado,0,sizeof(blocoHexProcessado)); // Limpa array para tratar recebimento do firmware
+
+            //Apaga dos dados da flash externa
+
+				    dadosTx->pacote.dados[0] = CMD_ACK;
+
+					n = MontarPacote(dadosTx->buffer, comando, 1);
+
+			break;
+
+
+		  case CMD_SYSTEM_RESET: // Reseta MCU (Software Reset)
+
+			// Responte ACK
+			dadosTx->pacote.dados[0] = CMD_ACK;
+
+			n = MontarPacote(dadosTx->buffer, comando, 1);
+			HAL_UART_Transmit(huart, dadosTx->buffer, n, TIMEOUT_COMUNICACAO_TX);
+
+			NVIC_SystemReset();
+
+			break;
+
+
+
+			case CMD_ENVIANDO_FIRMWARE: // SALVA AS LINHAS DO ARQUIVO HEX (MAIN) e (BOOTLOADER)
+
+			//---------------------------------------------------------------------------------
+			// Verificar se o bloco hex recebido já foi processado e gravado na memória
+			//---------------------------------------------------------------------------------
+			// Nota:  Software pode enviar bloco Hex repetido, caso ocorra problema na
+			//        comunicação e ele não receba o pacote de resposta do firmware
+			//---------------------------------------------------------------------------------
+
+		      {
+		        uint16_t tamanhoComparar = sizeof(blocoHexProcessado);  // Tamanho para comparação é o tamanho do array
+		        if (tamanhoComparar > dadosRx->pacote.tamanho - TAMANHO_HEADER ) // Verifica se a quantidade de dados recebido é menor que array de comparação
+		        {
+		          tamanhoComparar = dadosRx->pacote.tamanho - TAMANHO_HEADER; // Atualiza variável com a quantidade adequada para a comparação
+		        }
+
+		        //Comparar o último bloco processado com o bloco recebido no pacote de dados
+		        if (memcmp(blocoHexProcessado,dadosRx->pacote.dados,tamanhoComparar) != 0)
+		        {
+		          // Blocos comparados são diferentes
+		          // Hex recebido ainda não foi processado
+		         // stats_firm = decodificarHEX(dadosRx, &fileHEX); // ----> Envia o pacote todo para a função de decodificação de HEX (1KB) por vez
+
+		        	stats_firm = decodificarHEX(dadosRx);
+
+		          // Limpa array e preenche com o último bloco hex processado
+		          memset(blocoHexProcessado,0,sizeof(blocoHexProcessado));
+		          memcpy(blocoHexProcessado,dadosRx->pacote.dados,tamanhoComparar);
+		        }
+		        else
+		        {
+		          // Blocos comparados são iguais
+		          // Responde pacote com as informações já existentes em stats_firm
+		          tamanhoComparar = 0;  // debug
+		        }
+		      }
+
+
+			  //***stats_firm = decodificarHEX(dadosRx, &fileHEX); // ----> Envia o pacote todo para a função de decodificação de HEX (1KB) por vez
+
+				if (stats_firm.stats_firm.status == FIRM_OK)
+				{
+				  // Decodificação do pacote OK
+				  dadosTx->pacote.dados[0] = CMD_ACK;
+
+					memcpy(&stats_firm.buffer[1], &stats_firm.stats_firm.linhas_gravadas, 2);
+
+					memcpy(&dadosTx->pacote.dados[1], &stats_firm.buffer[0], sizeof(stats_firm.buffer));
+					n = MontarPacote(dadosTx->buffer, comando, sizeof(stats_firm.buffer) + 1);
+				}
+				else if (stats_firm.stats_firm.status == FIRM_FIM)
+				{
+				  // Chegou ao fim do arquivo
+					//Dados_FecharArquivo(&fileHEX);
+					//memset(&fileHEX, 0, sizeof(FIL));
+
+					dadosTx->pacote.dados[0] = CMD_ACK;
+					memcpy(&dadosTx->buffer[1], &stats_firm.buffer, sizeof(stats_firm.buffer));
+					n = MontarPacote(dadosTx->buffer, comando, sizeof(stats_firm.buffer) + 1);
+				}
+				else
+				{
+				  // Decodificação do pacote falhou - responde NACK
+				  dadosTx->pacote.dados[0] = CMD_NACK;
+
+					memcpy(&dadosTx->buffer[1], &stats_firm.buffer, sizeof(stats_firm.buffer));
+
+					n = MontarPacote(dadosTx->buffer, comando, sizeof(stats_firm.buffer) + 1);
+				}
+
+		    break;
+
+
+			case CMD_BOOT_GRAVAR_HEX:
+
+
+				break;
+
+		default:
+
+			break;
+			comando = CMD_INVALIDO;
+
+		}
+
+
+		if (n < 0) {
+
+				if (HAL_UART_Transmit(huart, dadosTx->buffer, n, TIMEOUT_COMUNICACAO_TX) != HAL_OK)
+				{
+
+					Error_Handler();
+					/* IMPLEMENTAR TRATAMENTO DE ERRO ADEQUADO */
+				}
+			}
+		// Processamento finalizado, volta ao estado inicial
+				*estado = ESTADO_AGUARDANDO_PACOTE;
+
+	}
+
+}

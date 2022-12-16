@@ -9,6 +9,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\BootLoader"/>
+			<item value="C:\Users\pedro.pereira\OneDrive - LUPA\Documentos\BootLoader"/>
 			<item value="C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1"/>
 		</list>
 	</section>

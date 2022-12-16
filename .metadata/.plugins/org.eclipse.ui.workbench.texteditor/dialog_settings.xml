@@ -1,27 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="int"/>
+		<item key="selection" value="&amp;huart4"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="&amp;huart4"/>
+			<item value="huart"/>
+			<item value="ProcessarUART"/>
+			<item value="CMD_PING"/>
+			<item value="CMD_STATUS"/>
+			<item value="E_PACOTE_OK"/>
+			<item value=""/>
+			<item value="Transmit"/>
+			<item value="Transmite"/>
+			<item value="AK"/>
+			<item value="Aqui"/>
+			<item value="MontarPacote"/>
+			<item value="comunicacao"/>
 			<item value="waiFor"/>
 			<item value="int"/>
-			<item value="waitefor"/>
-			<item value="Erro"/>
-			<item value="Task03"/>
-			<item value="StratDefaut"/>
-			<item value="config"/>
 		</list>
 		<list key="replacehistory">
+			<item value=""/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
-		<item key="DIALOG_X_ORIGIN" value="567"/>
-		<item key="DIALOG_Y_ORIGIN" value="178"/>
+		<item key="DIALOG_X_ORIGIN" value="-629"/>
+		<item key="DIALOG_Y_ORIGIN" value="211"/>
 		<item key="DIALOG_WIDTH" value="322"/>
 		<item key="DIALOG_HEIGHT" value="391"/>
 		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>

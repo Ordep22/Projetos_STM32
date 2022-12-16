@@ -1,14 +1,14 @@
-!SESSION 2022-11-07 08:52:09.430 -----------------------------------------------
-eclipse.buildId=Version 1.10.1
-java.version=11.0.14.1
+!SESSION 2022-12-09 08:40:27.624 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
 This is a continuation of log file C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\.metadata\.bak_0.log
-Created Time: 2022-11-07 18:45:10.263
+Created Time: 2022-12-12 14:51:45.304
 
-!ENTRY org.eclipse.ui.console 4 2 2022-11-07 18:45:10.263
+!ENTRY org.eclipse.ui.console 4 2 2022-12-12 14:51:45.306
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
 !STACK 0
 org.eclipse.swt.SWTException: Widget is disposed
@@ -54,7 +54,7 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui.console 4 120 2022-11-07 18:45:10.263
+!ENTRY org.eclipse.ui.console 4 120 2022-12-12 14:51:45.320
 !MESSAGE Exception occurred during console property change notification.
 !STACK 0
 org.eclipse.swt.SWTException: Widget is disposed
@@ -100,99 +100,7 @@ org.eclipse.swt.SWTException: Widget is disposed
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui.console 4 2 2022-11-07 18:45:10.263
-!MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
-!STACK 0
-org.eclipse.swt.SWTException: Widget is disposed
-	at org.eclipse.swt.SWT.error(SWT.java:4918)
-	at org.eclipse.swt.SWT.error(SWT.java:4833)
-	at org.eclipse.swt.SWT.error(SWT.java:4804)
-	at org.eclipse.swt.widgets.Widget.error(Widget.java:447)
-	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:569)
-	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:253)
-	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
-	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
-	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
-	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:368)
-	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
-	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
-	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:849)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:852)
-	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:959)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1448)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1442)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1431)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4235)
-	at org.eclipse.swt.widgets.Display.release(Display.java:3681)
-	at org.eclipse.swt.graphics.Device.dispose(Device.java:324)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:168)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-
-!ENTRY org.eclipse.ui.console 4 120 2022-11-07 18:45:10.263
-!MESSAGE Exception occurred during console property change notification.
-!STACK 0
-org.eclipse.swt.SWTException: Widget is disposed
-	at org.eclipse.swt.SWT.error(SWT.java:4918)
-	at org.eclipse.swt.SWT.error(SWT.java:4833)
-	at org.eclipse.swt.SWT.error(SWT.java:4804)
-	at org.eclipse.swt.widgets.Widget.error(Widget.java:447)
-	at org.eclipse.swt.widgets.Widget.getDisplay(Widget.java:569)
-	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsolePage.propertyChange(BuildConsolePage.java:253)
-	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.run(AbstractConsole.java:97)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.ui.console.AbstractConsole$PropertyNotifier.notify(AbstractConsole.java:112)
-	at org.eclipse.ui.console.AbstractConsole.firePropertyChange(AbstractConsole.java:230)
-	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleStreamDecorator.setColor(BuildConsoleStreamDecorator.java:46)
-	at org.eclipse.cdt.internal.ui.buildconsole.BuildConsoleManager.propertyChange(BuildConsoleManager.java:368)
-	at org.eclipse.ui.preferences.ScopedPreferenceStore$2.run(ScopedPreferenceStore.java:325)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.ui.preferences.ScopedPreferenceStore.firePropertyChangeEvent(ScopedPreferenceStore.java:322)
-	at org.eclipse.ui.preferences.ScopedPreferenceStore.lambda$0(ScopedPreferenceStore.java:171)
-	at org.eclipse.core.internal.preferences.EclipsePreferences$2.run(EclipsePreferences.java:849)
-	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:45)
-	at org.eclipse.core.internal.preferences.EclipsePreferences.firePreferenceEvent(EclipsePreferences.java:852)
-	at org.eclipse.core.internal.preferences.EclipsePreferences.remove(EclipsePreferences.java:959)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1448)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.resetOverriddenPreferences(PartRenderingEngine.java:1442)
-	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$StylingPreferencesHandler.lambda$0(PartRenderingEngine.java:1431)
-	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:89)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4243)
-	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4235)
-	at org.eclipse.swt.widgets.Display.release(Display.java:3681)
-	at org.eclipse.swt.graphics.Device.dispose(Device.java:324)
-	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:168)
-	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:203)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:136)
-	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:401)
-	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:255)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
-	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
-	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
-	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-
-!ENTRY org.eclipse.ui.console 4 2 2022-11-07 18:45:10.263
+!ENTRY org.eclipse.ui.console 4 2 2022-12-12 14:51:45.322
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
 !STACK 0
 java.lang.NullPointerException
@@ -233,7 +141,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui.console 4 120 2022-11-07 18:45:10.263
+!ENTRY org.eclipse.ui.console 4 120 2022-12-12 14:51:45.323
 !MESSAGE Exception occurred during console property change notification.
 !STACK 0
 java.lang.NullPointerException
@@ -274,7 +182,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui.console 4 2 2022-11-07 18:45:10.263
+!ENTRY org.eclipse.ui.console 4 2 2022-12-12 14:51:45.324
 !MESSAGE Problems occurred when invoking code from plug-in: "org.eclipse.ui.console".
 !STACK 0
 java.lang.NullPointerException
@@ -315,7 +223,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui.console 4 120 2022-11-07 18:45:10.263
+!ENTRY org.eclipse.ui.console 4 120 2022-12-12 14:51:45.325
 !MESSAGE Exception occurred during console property change notification.
 !STACK 0
 java.lang.NullPointerException
@@ -356,7 +264,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.337
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -381,7 +289,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.339
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -406,7 +314,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.340
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -431,7 +339,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.340
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -456,7 +364,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.341
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -481,7 +389,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.342
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -506,7 +414,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.342
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -531,7 +439,7 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
 
-!ENTRY org.eclipse.ui 4 0 2022-11-07 18:45:10.279
+!ENTRY org.eclipse.ui 4 0 2022-12-12 14:51:45.343
 !MESSAGE Unhandled event loop exception
 !STACK 0
 java.lang.NullPointerException
@@ -555,29 +463,348 @@ java.lang.NullPointerException
 	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:659)
 	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:596)
 	at org.eclipse.equinox.launcher.Main.run(Main.java:1467)
-!SESSION 2022-11-08 08:16:02.667 -----------------------------------------------
-eclipse.buildId=Version 1.10.1
-java.version=11.0.14.1
+
+!ENTRY org.eclipse.core.jobs 4 2 2022-12-12 14:51:46.185
+!MESSAGE An internal error occurred during: "Execute Debug Command".
+!STACK 0
+org.eclipse.core.runtime.AssertionFailedException: assertion failed: The application has not been initialized.
+	at org.eclipse.core.runtime.Assert.isTrue(Assert.java:113)
+	at org.eclipse.core.internal.runtime.InternalPlatform.assertInitialized(InternalPlatform.java:139)
+	at org.eclipse.core.internal.runtime.InternalPlatform.getAdapterManager(InternalPlatform.java:160)
+	at org.eclipse.core.runtime.Platform.getAdapterManager(Platform.java:649)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.getAdapter(GdbLaunch.java:454)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunch.disconnect(GdbLaunch.java:338)
+	at org.eclipse.debug.internal.core.commands.DisconnectCommand.execute(DisconnectCommand.java:35)
+	at org.eclipse.debug.internal.core.commands.ForEachCommand.doExecute(ForEachCommand.java:36)
+	at org.eclipse.debug.core.commands.AbstractDebugCommand$1.run(AbstractDebugCommand.java:215)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.core.jobs 2 2 2022-12-12 14:51:46.535
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.service.GDBBackend$MonitorJob
+
+!ENTRY org.eclipse.core.jobs 2 2 2022-12-12 14:51:46.536
+!MESSAGE Job found still running after platform shutdown.  Jobs should be canceled by the plugin that scheduled them during shutdown: org.eclipse.cdt.dsf.gdb.internal.ui.console.GdbBasicCliConsole$InputReadJob
+!SESSION 2022-12-12 14:51:47.300 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
 java.vendor=Eclipse Adoptium
 BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
 Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-11-08 08:16:37.120
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-12-12 14:51:53.345
 !MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
 
-!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-11-08 08:16:37.257
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-12-12 14:51:53.420
 !MESSAGE Log4j initialized with config file C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\.metadata\.log4j.xml
 
-!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-11-08 08:16:49.238
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-12 14:52:05.337
 !MESSAGE Started RMI Server, listening on port 41337
 
-!ENTRY org.eclipse.ui.ide 4 4 2022-11-08 09:24:06.779
-!MESSAGE Problems saving workspace
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-12 15:33:29.640
+!MESSAGE Error in final launch sequence:
 
-!ENTRY org.eclipse.ui.ide 2 1 2022-11-08 09:24:06.784
-!MESSAGE Problems occurred while trying to save the state of the workbench.
-!SUBENTRY 1 org.eclipse.core.resources 2 234 2022-11-08 09:24:06.784
-!MESSAGE The project description file (.project) for 'Project_20_Generate_Hex_File' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-12 15:33:29.640
+!MESSAGE Setup exceptions
+!SESSION 2022-12-13 14:36:36.744 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
 
-!ENTRY org.eclipse.core.resources 2 10035 2022-11-08 09:24:07.011
-!MESSAGE The workspace will exit with unsaved changes in this session.
+!ENTRY org.eclipse.core.resources 2 10035 2022-12-13 14:36:39.203
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-12-13 14:36:44.092
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-12-13 14:36:44.176
+!MESSAGE Log4j initialized with config file C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-13 14:36:56.179
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-13 17:39:13.367
+!MESSAGE Error in final launch sequence:
+
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-13 17:39:13.367
+!MESSAGE Setup exceptions
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-14 18:27:37.406
+!MESSAGE Error in final launch sequence:
+
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-14 18:27:37.406
+!MESSAGE Setup exceptions
+!SESSION 2022-12-15 08:46:03.592 -----------------------------------------------
+eclipse.buildId=Version 1.11.0
+java.version=11.0.16
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=pt_BR
+Command-line arguments:  -os win32 -ws win32 -arch x86_64
+
+!ENTRY org.eclipse.core.resources 2 10035 2022-12-15 08:46:06.227
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 4 4 2022-12-15 08:46:12.433
+!MESSAGE CubeMX plugin appears to be active, Log4j initialization might be too late.
+
+!ENTRY com.st.stm32cube.ide.mcu.informationcenter 1 1 2022-12-15 08:46:12.535
+!MESSAGE Log4j initialized with config file C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\.metadata\.log4j.xml
+
+!ENTRY com.st.stm32cube.ide.mcu.ide 1 1 2022-12-15 08:46:22.754
+!MESSAGE Started RMI Server, listening on port 41337
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-15 12:36:46.819
+!MESSAGE Error in final launch sequence:
+
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-15 12:36:46.820
+!MESSAGE Setup exceptions
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-15 13:03:05.176
+!MESSAGE Error in final launch sequence:
+
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-15 13:03:05.176
+!MESSAGE Setup exceptions
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-15 13:33:06.741
+!MESSAGE Error in final launch sequence:
+
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-15 13:33:06.741
+!MESSAGE Setup exceptions
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 104 2022-12-15 13:37:54.641
+!MESSAGE Program file does not exist
+!STACK 0
+java.io.FileNotFoundException: C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\BootLoader\Debug\BootLoader.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 org.eclipse.cdt.dsf.gdb 4 104 2022-12-15 13:37:54.641
+!MESSAGE C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\BootLoader\Debug\BootLoader.elf not found
+!STACK 0
+java.io.FileNotFoundException: C:\Users\pedro.pereira\STM32CubeIDE\workspace_1.10.1\BootLoader\Debug\BootLoader.elf not found
+	at org.eclipse.cdt.dsf.gdb.launching.LaunchUtils.verifyProgramPath(LaunchUtils.java:130)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.checkBinaryDetails(GdbLaunchDelegate.java:330)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:152)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.cdt.dsf 4 -1 2022-12-15 15:34:15.760
+!MESSAGE Uncaught exception in DSF executor thread
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.getId(GDBControl.java:293)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl_7_4.createComandControlContext(GDBControl_7_4.java:52)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.doInitialize(GDBControl.java:275)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl$1.handleSuccess(GDBControl.java:264)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:67)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.done(RequestMonitor.java:314)
+	at org.eclipse.cdt.dsf.service.AbstractDsfService.initialize(AbstractDsfService.java:102)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.initialize(GDBControl.java:261)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence$5.execute(DSFServicesLaunchSequence.java:106)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.cdt.dsf 4 10005 2022-12-15 15:34:15.761
+!MESSAGE Request for monitor: 'RequestMonitor (org.eclipse.cdt.dsf.concurrent.RequestMonitorWithProgress@21749ee0): Status ERROR: org.eclipse.cdt.dsf code=0 Unhandled exception when executing Sequence com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence@5e10a0eb, step #22 java.lang.NullPointerException' resulted in an error.
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2022-12-15 15:34:15.761
+!MESSAGE Unhandled exception when executing Sequence com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence@5e10a0eb, step #22
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.getId(GDBControl.java:293)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl_7_4.createComandControlContext(GDBControl_7_4.java:52)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.doInitialize(GDBControl.java:275)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl$1.handleSuccess(GDBControl.java:264)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:67)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.done(RequestMonitor.java:314)
+	at org.eclipse.cdt.dsf.service.AbstractDsfService.initialize(AbstractDsfService.java:102)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.initialize(GDBControl.java:261)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence$5.execute(DSFServicesLaunchSequence.java:106)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-15 15:34:15.763
+!MESSAGE Error in services launch sequence
+!STACK 1
+org.eclipse.core.runtime.CoreException: Unhandled exception when executing Sequence com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence@5e10a0eb, step #22
+	at org.eclipse.cdt.dsf.concurrent.Sequence.abortExecution(Sequence.java:599)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:485)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.NullPointerException
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.getId(GDBControl.java:293)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl_7_4.createComandControlContext(GDBControl_7_4.java:52)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.doInitialize(GDBControl.java:275)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl$1.handleSuccess(GDBControl.java:264)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:67)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.done(RequestMonitor.java:314)
+	at org.eclipse.cdt.dsf.service.AbstractDsfService.initialize(AbstractDsfService.java:102)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.initialize(GDBControl.java:261)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence$5.execute(DSFServicesLaunchSequence.java:106)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	... 9 more
+!SUBENTRY 1 org.eclipse.cdt.dsf 4 0 2022-12-15 15:34:15.764
+!MESSAGE Unhandled exception when executing Sequence com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence@5e10a0eb, step #22
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.getId(GDBControl.java:293)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl_7_4.createComandControlContext(GDBControl_7_4.java:52)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.doInitialize(GDBControl.java:275)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl$1.handleSuccess(GDBControl.java:264)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at org.eclipse.cdt.dsf.concurrent.ImmediateExecutor.execute(ImmediateExecutor.java:67)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.done(RequestMonitor.java:314)
+	at org.eclipse.cdt.dsf.service.AbstractDsfService.initialize(AbstractDsfService.java:102)
+	at org.eclipse.cdt.dsf.gdb.service.command.GDBControl.initialize(GDBControl.java:261)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFServicesLaunchSequence$5.execute(DSFServicesLaunchSequence.java:106)
+	at org.eclipse.cdt.dsf.concurrent.Sequence.executeStep(Sequence.java:475)
+	at org.eclipse.cdt.dsf.concurrent.Sequence$2.handleSuccess(Sequence.java:437)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor.handleCompleted(RequestMonitor.java:391)
+	at org.eclipse.cdt.dsf.concurrent.RequestMonitor$2.run(RequestMonitor.java:317)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
+!ENTRY org.eclipse.cdt.dsf.gdb 4 5012 2022-12-15 15:36:37.295
+!MESSAGE Error in final launch sequence:
+
+Setup exceptions
+!STACK 1
+org.eclipse.core.runtime.CoreException: Setup exceptions
+	at org.eclipse.cdt.dsf.concurrent.Query.get(Query.java:112)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugSession(GdbLaunchDelegate.java:252)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launchDebugger(GdbLaunchDelegate.java:109)
+	at org.eclipse.cdt.dsf.gdb.launching.GdbLaunchDelegate.launch(GdbLaunchDelegate.java:97)
+	at com.st.stm32cube.ide.mcu.debug.launch.DSFDelegate.launch(DSFDelegate.java:328)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:803)
+	at org.eclipse.debug.internal.core.LaunchConfiguration.launch(LaunchConfiguration.java:716)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin.buildAndLaunch(DebugUIPlugin.java:1021)
+	at org.eclipse.debug.internal.ui.DebugUIPlugin$2.run(DebugUIPlugin.java:1224)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+!SUBENTRY 1 com.st.stm32cube.ide.mcu.debug.launch 4 0 2022-12-15 15:36:37.295
+!MESSAGE Setup exceptions

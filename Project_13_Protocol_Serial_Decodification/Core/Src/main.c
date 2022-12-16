@@ -84,7 +84,6 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART2_UART_Init(void);
 static void MX_CRC_Init(void);
-
 /* USER CODE BEGIN PFP */
 
 int PiscaLed(int NumPiscadas , int TempoDelay)
@@ -336,12 +335,6 @@ int main(void)
 {
   /* USER CODE BEGIN 1 */
 
-	HAL_StatusTypeDef rx_status;
-
-
-	//int Tamanho_dado = 0;
-
-
 
   	//V_Estagio  = CHECKSUM;
 	V_Estagio_Protocolo = CHECKSUM;
@@ -378,15 +371,22 @@ int main(void)
   {
     /* USER CODE END WHILE */
 
-	  HAL_Delay(500);
+    /* USER CODE BEGIN 3 */
 
-	  uint8_t rx_buffer[100] = {0};
+	  HAL_StatusTypeDef rx_status;
 
-	  HAL_Delay(500);
 
-	  rx_status = HAL_UART_Receive_IT(&huart2,rx_buffer,sizeof rx_buffer);
+	  //HAL_Delay(500);
 
-	  if (rx_status !=  HAL_ERROR && rx_buffer[0] == 'L')
+	  uint8_t rx_buffer[256] = {0};
+	  uint8_t recebe = 0;
+
+	  //HAL_Delay(500);
+
+      //rx_status = HAL_UART_Receive(&huart2,rx_buffer,sizeof rx_buffer,100);
+	  HAL_UART_Receive(&huart2, rx_buffer, 54, 1000);
+
+	  if (rx_buffer[0] != 0)
 	  {
 
 		  Recebe_dados(rx_buffer,rx_buffer[4]+1);
@@ -398,7 +398,7 @@ int main(void)
 
 
   }
-
+  /* USER CODE END 3 */
 }
 
 /**
@@ -490,7 +490,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 9600;
+  huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;
